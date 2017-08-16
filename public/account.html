@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="lib/angular-chart.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!--For users deploying their apps to Windows 8.1 or Android Gingerbread, platformOverrided.js
+    will inject platform-specific code from the /merges folder -->
+    <script src="js/platformOverrides.js"></script>
+
+    <!-- ionic/angularjs js -->
+    
+	 <script src="lib/ionic/js/ionic.bundle.js"></script>
+	 <script src="lib/Chart.js"></script>
+	<script src="lib/angular-chart.js"></script>
+	<!-- <script src="lib/angular/angular.js"></script> -->
+	<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+      
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable" style="background-color:#6E4390;height: 60px;">
+        <h1 class="title qui-header" style="color:#fff;text-align: center;line-height: 54px !important;">Login</h1>		      
+      </ion-header-bar>
+      <ion-content>
+          <span style="text-align: center;float: left;padding: 28px 72px;font-weight:bold;">
+          Please enter your email and a password to Login into your account</span><br />
+
+          <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)">
+
+              <div class="list">
+
+                  <label class="item item-input" ng-class="" style="padding: 4px 20px;">
+                      <span class="input-label" style="font-weight:bold;">Email</span>
+                      <input type="text" name="usercode"  ng-minlength="5" ng-maxlength="20" required style="margin: 6px 0px;border: 1px solid #abadb3;padding: 0px;height:24px !important;">
+                  </label>
+
+                  <div class="error-container" ng-show="" ng-messages="">
+                      <div ng-messages-include="error-list.html"></div>
+                  </div>
+                  <label class="item item-input" ng-class="" style="padding: 4px 20px;">
+                      <span class="input-label" style="font-weight:bold;">Password</span>
+                      <input type="text" name="usercode"  ng-minlength="5" ng-maxlength="20" required  style="margin: 6px 0px;border: 1px solid #abadb3;padding: 0px;height:24px !important;">
+                  </label>
+
+                  <div class="error-container last-error-container" ng-show="" ng-messages="">
+                      <div ng-messages-include="error-list.html"></div>
+                  </div>
+
+              </div>
+
+              <div class="bar bar-footer" style="background-image: none;">                  
+				  <div ng-controller="homeCtrl" class="pull-right" style="padding-left: 84%;">
+                  <a href="#homepage" ng-click="redirctMainpage()"  style="color:#6E4390;font-weight: bold;text-decoration:none;">Next</a>
+				  </div>
+              </div>
+           </form> 
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
